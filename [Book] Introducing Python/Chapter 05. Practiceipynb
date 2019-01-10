@@ -1,0 +1,214 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 5장 연습문제"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.1 zoo.py 파일에서 'Open 9-5 daily' 문자열을 반환하는 hours( ) 함수를 정의하라. 그러고 나서 대화식 인터프리터에서 zoo 모듈을 임포트한 후 hours( ) 함수를 호출하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# zoo.py\n",
+    "def hours():\n",
+    "    print('Open 9-5 daily')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    ">>> import zoo\n",
+    ">>> zoo.hours()\n",
+    "open 9-5 daily"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.2 대화식 인터프리터에서 zoo 라는 모듈을 menagerie라는 임포트한 후 hours( ) 함수를 호출하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    ">>> import zoo as menagerie\n",
+    ">>> menagerie.hours()\n",
+    "open 9-5 daily"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.3 인터프리터에서 zoo 모듈로부터 직접 hours( ) 함수를 임포트해서 호출하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    ">>> from zoo import hours\n",
+    ">>> hours()\n",
+    "open 9-5 daily"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.4 hours( ) 함수를 info 라는 이름으로 임포트해서 호출하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    ">>> from zoo import hours as info\n",
+    ">>> info()\n",
+    "open 9-5 daily"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.5 키: 값 쌍이 'a' : 1, 'b':2, 'c': 3인 plain 딕너리를 만들어 출력하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'a': 1, 'b': 2, 'c': 3}"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "plain = {\n",
+    "    'a': 1,\n",
+    "    'b': 2,\n",
+    "    'c': 3\n",
+    "}\n",
+    "plain"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.6 연습문제 5.5의 plain dictionary에 있는 키:값 쌍으로 fancy라는 OrderedDict를 만들어서 출력하라. plain 딕셔너리와 출력 순서가 같은가?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "OrderedDict([('a', 1), ('b', 2), ('c', 3)])"
+      ]
+     },
+     "execution_count": 48,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from collections import OrderedDict\n",
+    "fancy = OrderedDict(plain)\n",
+    "fancy"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "5.7 dict_of_lists 라는 defaultdict를 만들어서 list 인자를 전달하라. 리스트 dict_of_lists['a']에 'something for a' 값을 추가하고, dict_of_lists['a']를 출력하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from collections import defaultdict\n",
+    "dict_of_lists = defaultdict()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'something for a'"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dict_of_lists['a'] = 'something for a'\n",
+    "dict_of_lists['a']"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
